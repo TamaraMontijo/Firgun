@@ -1,0 +1,64 @@
+{{!--
+<nav class="navbar navbar-expand-lg navbar-dark bg-light" id="navbar">
+  <div class="logo">
+      <img src="img/logo.png" id="firgun">
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cadastros">Lista de cadastros</a>
+      </li>
+      {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/usuarios/logout" tabindex="-1" aria-disabled="true">Sair</a>
+        </li>
+      {{else}}
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/usuarios/login" tabindex="-1" aria-disabled="true">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/usuarios/registro" tabindex="-1" aria-disabled="true">Registro</a>
+        </li>
+      {{/if}}
+    </ul>
+  </div>
+</nav> --}}
+
+<header class="header small-header" id="navbar">
+  <div class="logo">
+      <a href="home"><img src="img/logo.png" id="firgun"></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cadastros">Lista de cadastros</a>
+      </li>
+      {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/usuarios/logout" tabindex="-1" aria-disabled="true">Sair</a>
+        </li>
+      {{else}}
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/usuarios/login" tabindex="-1" aria-disabled="true">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/usuarios/registro" tabindex="-1" aria-disabled="true">Registro</a>
+        </li>
+      {{/if}}
+    </ul>
+  </div>
+  </header>

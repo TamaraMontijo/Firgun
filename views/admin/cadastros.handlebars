@@ -1,0 +1,26 @@
+<div class="container">
+<h2>Lista de cadastros</h2>
+<br>
+  {{#each usuarios}}
+    <p>Nome: {{dataValues.nome}} {{dataValues.sobrenome}}</p>
+    <p>Celular: {{dataValues.celular}}</p>
+    <p>Email: {{dataValues.email}}</p>
+    <p>Cidade: {{dataValues.cidade}} ({{dataValues.estado}})</p>
+  <a href="/usuarios/edit/{{dataValues.id}}">Editar</a>
+  <hr>
+  {{/each}}
+</div>
+{{!--     nome: req.body.nome,
+    sobrenome: req.body.sobrenome,
+    email: req.body.email,
+    telefone: req.body.telefone,
+    celular: req.body.celular,
+    nascimento: req.body.nascimento,
+    CEP: req.body.cep,
+    estado: req.body.estado,
+    cidade: req.body.cidade,
+    CPFouCNPJ: req.body.CPForCNPJ,
+    valor: req.body.valor,
+    motivo: req.body.motivo,
+    comoSoube: req.body.comoSoube --}}
+

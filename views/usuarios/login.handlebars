@@ -1,0 +1,23 @@
+
+<div class="container">
+  <br>
+  <h4>Login</h4><br />
+  <div class="card">
+      <div class="card-body">
+          <form action="/usuarios/login" method="POST">
+              <label for="email">Email: </label>
+                <input type="email" class="form-control" name="email">
+                <br>
+              <label for="senha">Senha: </label>
+                  <input type="password" class="form-control" name="senha">
+                  <br>
+              <a class="btn btn-primary btn-sm" type="submit" href="/cadastros">Entrar</a>
+              <br>
+              <br>
+              <small id="emailHelp" class="form-text text-muted">Ainda não é cadastrado?</small>
+              <a type="button" class="btn btn-secondary btn-sm" href="/registro">Cadastrar</a>
+          </form>
+
+      </div>
+  </div>
+</div>
