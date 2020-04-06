@@ -37,4 +37,4 @@ const User = db.sequelize.define('users', {
 
 module.exports = User
 
-User.sync({force: true})
+// User.sync({force: true})

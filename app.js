@@ -106,7 +106,12 @@ const { eAdmin } = require('./helpers/eAdmin');
         res.render('usuarios/registro', { erros });
     }
     else {
-        User.findOne({ email: req.body.email }).then(user => {
+      const alreadyUser = User.findOne({
+          where: {
+              email: req.body.email
+          }
+      })
+        alreadyUser.then(user => {
             if(user) {
                 req.flash('error_msg', 'Já existe uma conta com esse email no nosso sistema');
                 res.redirect('/registro');
