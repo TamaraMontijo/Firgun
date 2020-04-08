@@ -99,7 +99,7 @@ const { eAdmin } = require('./helpers/eAdmin');
     }
 
     if(req.body.senha !== req.body.senha2) {
-        erros.push({ texto: 'As senhas são diferentes, tente novamento' });
+        erros.push({ texto: 'As senhas são diferentes, tente novamente' });
     }
 
     if(erros.length > 0) {
@@ -127,7 +127,7 @@ const { eAdmin } = require('./helpers/eAdmin');
                     bcrypt.hash(novoUser.senha, salt, (erro, hash) => {
                         if(erro) {
                             req.flash('error_msg', 'Houve um erro durante o salvamento do usuário');
-                            res.redirect('/');
+                            res.redirect('/registro');
                         }
 
                         novoUser.senha = hash;
@@ -144,7 +144,7 @@ const { eAdmin } = require('./helpers/eAdmin');
             }
         }).catch(err => {
             req.flash('error_msg', 'Houve um erro interno');
-            res.redirect('/');
+            res.redirect('/registro');
         });
     }
 });
