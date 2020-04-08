@@ -34,3 +34,8 @@
 .button {
   background-color:rgb(59, 166, 255);
 }
+
+#login-form {
+  width: 500px
+
+}
