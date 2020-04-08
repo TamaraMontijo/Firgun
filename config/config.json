@@ -19,7 +19,9 @@
     "password": "b1fccfd3e9f323fbc9858c538b0995d1c5a82f98328a8eedf8c2ad95520827a7",
     "database": "db7cemjs0hh7er",
     "host": "ec2-54-147-209-121.compute-1.amazonaws.com",
-    "dialect": "mysql"
+    "dialect":"postgres",
+    "protocol":"postgres",
+    "port":"5432"
   }
 }
 
