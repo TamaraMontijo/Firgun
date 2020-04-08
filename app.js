@@ -61,8 +61,8 @@ const { eAdmin } = require('./helpers/eAdmin');
 
     app.post('/login', (req, res, next) => {
         passport.authenticate('local', {
-            successRedirect: 'admin/cadastros',
-            failureRedirect: '/usuarios/login',
+            successRedirect: '/cadastros',
+            failureRedirect: '/login',
             failureFlash: true
         })(req, res, next);
     });
@@ -174,7 +174,7 @@ const { eAdmin } = require('./helpers/eAdmin');
       }).then(function(){
         res.render('usuarios/cadastro_efetuado')
       }).catch(function(erro){
-        res.send("Erro ao se cadastrar: " + erro)
+        res.render('usuarios/cadastro_erro')
       })
     })
 

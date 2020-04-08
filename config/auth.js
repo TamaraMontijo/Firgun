@@ -8,9 +8,14 @@ require("../models/user")
 const User = require('../models/user')
 
 module.exports = function(passport){
-  passport.use(new localStrategy({usernameField: 'email', passwordField: "senha"}, (email, senha, done) => {
-    User.findOne({email: email}).then((user) => {
-      if(user){
+  passport.use('local', new localStrategy({usernameField: 'email', passwordField: "senha"}, (email, senha, done) => {
+    const userExist = User.findOne({
+          where: {
+              email: email
+          }
+      })
+        userExist.then((user) => {
+      if(!user){
         return done(null, false, {message: "Esta conta não existe"})
       }
 
@@ -28,10 +33,22 @@ module.exports = function(passport){
     done(null, user.id)
   })
 
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-      done(err, user)
-    })
-  })
+    passport.deserializeUser(function (id, done) {
+
+        User.findByPk(id).then(function (user) {
+
+            if (user) {
+
+                done(null, user.get());
+
+            } else {
+
+                done(user.errors, null);
+
+            }
+
+        });
+
+    });
 
 }
